@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
+    <id>Natery.ReadWriteLock</id>
     <version>1.0.0</version>
     <title>Natery.ReadWriteLock</title>
     <authors>Nathan Werry</authors>
