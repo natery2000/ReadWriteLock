@@ -4,12 +4,14 @@ namespace Natery.ReadWriteLock
 {
   public class LockedResource<TResource>
   {
-    private TResource _resource;
+    private IResourceManager<TResource> _resourceManager;
     private ReaderWriterLockSlim _lock = new ReaderWriterLockSlim();
 
-    public LockedResource(TResource resource)
+    public LockedResource() : this(new ResourceManager<TResource>()) { }
+
+    internal LockedResource(IResourceManager<TResource> resourceManager)
     {
-      _resource = resource;
+      _resourceManager = resourceManager;
     }
 
     public TResource Read()
@@ -17,7 +19,7 @@ namespace Natery.ReadWriteLock
       _lock.EnterReadLock();
       try
       {
-        return _resource;
+        return _resourceManager.Get();
       }
       finally
       {
@@ -30,7 +32,7 @@ namespace Natery.ReadWriteLock
       _lock.EnterWriteLock();
       try
       {
-        _resource = value;
+        _resourceManager.Set(value);
       }
       finally
       {
