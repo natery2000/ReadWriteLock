@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net472;net452;netstandard2.0</TargetFrameworks>
-    <Version>1.0.0</Version>
+    <Version>{version}</Version>
     <Authors>Nathan Werry</Authors>
     <Company />
     <Description>A simple wrapper for the ReaderWriterLockSlim class to clean up the consumers code.</Description>
     <PackageProjectUrl>https://github.com/natery2000/ReadWriteLock</PackageProjectUrl>
     <PackageTags>ReaderWriterLockSlim</PackageTags>
     <Copyright>Copyright 2019 Nathan Werry</Copyright>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
+    <AssemblyVersion>{version}</AssemblyVersion>
+    <FileVersion>{version}</FileVersion>
   </PropertyGroup>
 </Project>
